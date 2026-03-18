@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sorry 🥺</title>
+
+<style>
+body{
+background:#ffc0cb;
+font-family:sans-serif;
+text-align:center;
+padding-top:120px;
+}
+
+.box{
+background:white;
+padding:30px;
+border-radius:20px;
+width:90%;
+max-width:350px;
+margin:auto;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+button{
+padding:12px 20px;
+margin:10px;
+border:none;
+border-radius:12px;
+font-size:16px;
+cursor:pointer;
+}
+
+.yes{
+background:#ff5fa2;
+color:white;
+}
+
+.no{
+background:#eee;
+}
+
+#dance{
+font-size:70px;
+display:none;
+animation:dance .6s infinite alternate;
+}
+
+@keyframes dance{
+from{transform:rotate(-15deg);}
+to{transform:rotate(15deg);}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>🥺 I'm Really Sorry 💖</h2>
+
+<div id="q1">
+<p>Are you mad at me? 😢</p>
+<button class="yes" onclick="next()">No</button>
+<button class="yes" onclick="next()">Yes</button>
+</div>
+
+<div id="q2" style="display:none;">
+<p>Do you forgive me? 💕</p>
+<button class="yes" onclick="forgive()">Yes 💖</button>
+<button class="no" id="noBtn">No 😤</button>
+</div>
+
+<div id="dance">🐻💃💖</div>
+
+</div>
+
+<script>
+
+function next(){
+document.getElementById("q1").style.display="none";
+document.getElementById("q2").style.display="block";
+}
+
+function forgive(){
+document.getElementById("q2").style.display="none";
+document.getElementById("dance").style.display="block";
+}
+
+let noBtn=document.getElementById("noBtn");
+
+noBtn.addEventListener("touchstart",move);
+noBtn.addEventListener("mouseover",move);
+
+function move(){
+let x=Math.random()*200;
+let y=Math.random()*200;
+noBtn.style.position="absolute";
+noBtn.style.left=x+"px";
+noBtn.style.top=y+"px";
+}
+
+</script>
+
+</body>
+</html>
